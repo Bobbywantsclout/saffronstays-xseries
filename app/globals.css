@@ -1,0 +1,138 @@
+/* ─────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────── */
+:root {
+  /* Background */
+  --bg-base:        #0a0a0a;
+  --bg-surface:     #141414;
+  --bg-elevated:    #1c1c1c;
+  --bg-overlay:     rgba(10, 10, 10, 0.85);
+
+  /* Brand */
+  --gold:           #c8a951;
+  --gold-dim:       rgba(200, 169, 81, 0.15);
+  --gold-hover:     #d9bc6a;
+
+  /* Text */
+  --text-primary:   #f5f0e8;
+  --text-secondary: #a09880;
+  --text-muted:     #5a5548;
+
+  /* Borders */
+  --border:         rgba(255, 255, 255, 0.08);
+  --border-gold:    rgba(200, 169, 81, 0.3);
+
+  /* Spacing */
+  --nav-height:     72px;
+  --content-max:    1280px;
+  --page-pad:       clamp(1rem, 4vw, 3rem);
+
+  /* Radius */
+  --radius-sm:      6px;
+  --radius-md:      10px;
+  --radius-lg:      16px;
+
+  /* Shadows */
+  --shadow-card:    0 4px 32px rgba(0, 0, 0, 0.5);
+  --shadow-gold:    0 2px 20px rgba(200, 169, 81, 0.2);
+
+  /* Transitions */
+  --transition:     0.2s ease;
+}
+
+/* ─────────────────────────────────────────
+   RESET + BASE
+───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body), 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY SCALE
+───────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: var(--font-display), 'Cormorant Garamond', serif;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ─────────────────────────────────────────
+   UTILITY CLASSES
+───────────────────────────────────────── */
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+}
+
+.section-title {
+  font-family: var(--font-display), 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Mobile bottom bar clearance */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 80px;
+  }
+}

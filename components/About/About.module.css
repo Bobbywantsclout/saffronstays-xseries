@@ -1,0 +1,112 @@
+.section {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.heading {
+  margin-bottom: 1rem;
+}
+
+/* ── Description ─────────────────────────── */
+.description {
+  position: relative;
+  overflow: hidden;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.bullet {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.bullet::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.readMore {
+  font-size: 0.85rem;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition);
+}
+
+.readMore:hover {
+  color: var(--gold-hover);
+}
+
+/* ── Tabs ─────────────────────────────────── */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+
+.tab:hover {
+  border-color: var(--border-gold);
+  color: var(--text-primary);
+}
+
+.tabActive {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+
+/* ── Tab content ─────────────────────────── */
+.tabContent {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .tabs {
+    gap: 0.4rem;
+  }
+  .tab {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+}

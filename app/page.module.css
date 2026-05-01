@@ -1,0 +1,45 @@
+/* ─────────────────────────────────────────
+   TWO-COLUMN PAGE LAYOUT
+   Left: content sections (flexible)
+   Right: sticky booking card (fixed 380px)
+───────────────────────────────────────── */
+
+.pageLayout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2.5rem;
+  align-items: start;
+  padding-top: 0;
+}
+
+/* ── Content column ──────────────────────── */
+.content {
+  min-width: 0; /* prevent grid blowout */
+}
+
+/* ── Sidebar / booking card column ──────── */
+.sidebarWrap {
+  margin-top: -80px; /* pulls card up to overlap hero bottom edge */
+}
+
+.stickyCard {
+  position: sticky;
+  top: calc(var(--nav-height) + 1.5rem);
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — collapse to single column
+───────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .pageLayout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Hide the desktop sidebar on mobile — 
+     MobileBookingBar takes over instead     */
+  .sidebarWrap {
+    display: none;
+    margin-top: 0;
+  }
+}

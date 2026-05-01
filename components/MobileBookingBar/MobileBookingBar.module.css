@@ -1,0 +1,141 @@
+/* Only renders at mobile — hidden at desktop */
+
+.bar {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+.drawer {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+
+  /* ── Bar ─────────────────────────────────── */
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    height: 72px;
+    padding: 0 1.25rem;
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--border);
+    gap: 1rem;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.5);
+  }
+
+  .priceGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .priceStrike {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    font-family: var(--font-body), sans-serif;
+  }
+
+  .priceMain {
+    font-family: var(--font-display), serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .priceNight {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    font-family: var(--font-body), sans-serif;
+  }
+
+  .ctaBtn {
+    padding: 0.65rem 1.5rem;
+    background: var(--gold);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body), sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--bg-base);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background var(--transition);
+    flex-shrink: 0;
+  }
+
+  .ctaBtn:hover {
+    background: var(--gold-hover);
+  }
+
+  /* ── Overlay ────────────────────────────── */
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 201;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(2px);
+  }
+
+  /* ── Drawer ─────────────────────────────── */
+  .drawer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 202;
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--border);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 1rem 1.25rem 2rem;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .drawerOpen {
+    transform: translateY(0);
+  }
+
+  .drawerHandle {
+    width: 36px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 0 auto 1rem;
+  }
+
+  .drawerClose {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+
+  .drawerClose:hover {
+    background: var(--bg-elevated);
+  }
+}

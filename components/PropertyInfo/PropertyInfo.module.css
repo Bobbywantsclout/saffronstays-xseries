@@ -1,0 +1,120 @@
+.section {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+/* ── Rating ──────────────────────────────── */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.ratingNum {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.divider {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.reviewLink {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--border);
+  transition: color var(--transition);
+}
+
+.reviewLink:hover {
+  color: var(--gold);
+}
+
+/* ── Actions ─────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.actionBtn:hover {
+  border-color: var(--border-gold);
+  color: var(--text-primary);
+}
+
+.actionBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.favourited {
+  border-color: #e53935;
+  color: #e53935;
+  background: rgba(229, 57, 53, 0.08);
+}
+
+/* ── Tags ─────────────────────────────────── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-family: var(--font-body), sans-serif;
+}
+
+.tagIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
